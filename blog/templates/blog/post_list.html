@@ -6,17 +6,12 @@
         <div>
             <h1><a href="/">Blog Camilinha</a></h1>
         </div>
-
-        <div>
-            <p>publicado: 14.09.2019, 16:29</p>
-            <h2><a href="">1st</a></h2>
-            <p>Teste do primeiro post no meu site! :)</p>
-        </div>
-
-        <div>
-            <p>publicado: 14.09.2019, 16:30</p>
-            <h2><a href="">2nd</a></h2>
-            <p>Segundo teste!</p>
-        </div>
+      {% for post in posts %}
+      <div>
+     <p>published: {{ post.published_date }}</p>
+     <h2><a href="">{{ post.title }}</a></h2>
+     <p>{{ post.text|linebreaksbr }}</p>
+ </div>
+      {% endfor %}
     </body>
 </html>
